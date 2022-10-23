@@ -15,9 +15,9 @@ router.post("/", async (req, res) => {
   });
   try {
     Db = await Db.save();
-    res.send(`User ${Db.firstName} Addede to db!` + Db);
+    res.status(201).send(`User ${Db.firstName} Created Details :` + Db);
   } catch (err) {
-    res.send("errore : " + err);
+    res.send("error : " + err);
   }
 });
 router.patch("/:id", getUsers, async (req, res) => {
@@ -32,9 +32,9 @@ router.patch("/:id", getUsers, async (req, res) => {
   }
   try {
     let updateUser = await res.user.save();
-    res.json(updateUser);
+    res.send(`User ${updateUser.firstName} Update Details :` + updateUser);
   } catch (err) {
-    res.status(400).json({ message: err });
+    res.status(400).json({ message: "Bad Request" });
   }
 });
 router.delete("/:id", getUsers, async (req, res) => {
@@ -42,18 +42,19 @@ router.delete("/:id", getUsers, async (req, res) => {
     await res.user.remove();
     res.json({ message: "Deleted" });
   } catch (err) {
-    res.status(500).json({ message: "Canote find this user" });
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
 async function getUsers(req, res, next) {
+  let user;
   try {
-    let user = await db.findById(req.params.id);
+    user = await db.findById(req.params.id);
     if (user == null) {
-      return res.status(404).json({ message: "Canote find this user" });
+      return res.status(404).json({ message: "Not Found" });
     }
   } catch (err) {
-    return res.status(500).json({ message: err });
+    return res.status(500).json({ message: "Internal Server Error" });
   }
   res.user = user;
   next();
