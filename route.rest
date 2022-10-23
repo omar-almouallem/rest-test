@@ -1,0 +1,21 @@
+GET http://localhost:3000/users/6354aa8920466f43bf83b0d3
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "firstName": "Ahmed",
+    "lastName": "mo",
+    "age": 35
+}
+###
+DELETE http://localhost:3000/users/6354abcc643be45c44effe81
+###
+PATCH  http://localhost:3000/users/6354aa8920466f43bf83b0d3
+Content-Type: application/json
+
+{
+    "firstName": "New Namse",
+    "lastName": "new"
+    
+}
