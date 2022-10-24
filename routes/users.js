@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const db = require("./../module/db");
 
-// all routes in here sterting in /users
 router.get("/:id", getUsers, (req, res) => {
   res.json(res.user);
 });
