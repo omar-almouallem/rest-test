@@ -1,10 +1,10 @@
-GET http://localhost:3000/user/6355905e13a125821f1f438c
+GET http://localhost:3000/user/
 ###
 POST http://localhost:3000/users
 Content-Type: application/json
 
 ###
-DELETE http://localhost:3000/users/6355905e13a125821f1f438c
+DELETE http://localhost:3000/users
 ###
-PATCH  http://localhost:3000/users/635597436e983d3896995f34
+PATCH  http://localhost:3000/users/
 Content-Type: application/json
