@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const usersRoutes = require("./routes/users.js");
-const PORT = 3000;
+const PORT = 3000; // env variable 
 // app use
 app.use(bodyParser.json());
 app.use("/users", usersRoutes);
