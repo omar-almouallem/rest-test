@@ -4,3 +4,4 @@
 4- inner function shouldn't be exposed to the HTTP protocol
 5- fix issues from the comments.
 6- try convert the app to typescript.
+
