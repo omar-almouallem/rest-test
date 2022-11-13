@@ -1,25 +1,10 @@
-GET http://localhost:3000/users/636dca39c415806403fc618a
-
+GET http://localhost:3000/user/
 ###
 POST http://localhost:3000/users
 Content-Type: application/json
 
-{
-  "firstName": "omar",
-  "lastName": "omar",
-  "age":123
-}
-
 ###
-DELETE http://localhost:3000/users/636dca39c415806403fc618a
-
+DELETE http://localhost:3000/users
 ###
-PATCH  http://localhost:3000/users/636dca39c415806403fc618a
+PATCH  http://localhost:3000/users/
 Content-Type: application/json
-
-{
-  
-  "firstName": "omar",
-  "lastName": "mo",
-  "age":123
-}
